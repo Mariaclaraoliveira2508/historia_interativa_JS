@@ -10,12 +10,11 @@ const perguntas = [
     alternativas: [
       {
         texto: "Educação.",
-        afirmacao: "Acredito que a educação é a chave para transformar vidas. Busco aprender continuamente, desenvolver novas habilidades e compartilhar conhecimento para construir um futuro melhor."
+        afirmacao: "A cidade investiu em educação, melhorando as escolas e ampliando as oportunidades para os estudantes."
       },
       {
         texto: "Saúde.",
-        afirmacao: "Meu corpo merece amor, cuidado e respeito. Todos os dias, cultivo hábitos saudáveis, pensamentos positivos e equilíbrio. Eu me permito viver com mais saúde, paz e bem-estar."
-
+        afirmacao: "A cidade priorizou a saúde, melhorando o atendimento e o acesso aos serviços médicos."
       }
     ]
   },
@@ -24,11 +23,11 @@ const perguntas = [
     alternativas: [
       {
         texto: "Investir em infraestrutura.",
-        afirmacao: "nvestindo em infraestrutura, inovação e tecnologia para construir um futuro mais sólido, eficiente e sustentável, com soluções inteligentes e visão de longo prazo."
+        afirmacao: "A cidade investiu em infraestrutura, melhorando o abastecimento de água para a população."
       },
       {
         texto: "Criar campanhas de conscientização.",
-        afirmacao: "Criando campanhas de conscientização para promover a educação, incentivar mudanças positivas e construir uma sociedade mais informada, consciente e sustentável."
+        afirmacao: "A cidade promoveu campanhas de conscientização, incentivando a população a economizar água."
       }
     ]
   },
@@ -37,11 +36,11 @@ const perguntas = [
     alternativas: [
       {
         texto: "Aumentar a coleta.",
-        afirmacao: “Uma cidade limpa começa com a consciência de cada cidadão: não jogue lixo na rua, cuide do meio ambiente e faça parte da mudança!”
+        afirmacao: "A cidade aumentou a coleta de lixo, deixando as ruas mais limpas e melhorando a qualidade de vida."
       },
       {
         texto: "Investir em reciclagem.",
-        afirmacao: ♻️ “Investir em reciclagem é investir em um futuro sustentável, reduzir a poluição e transformar resíduos em novas oportunidades para o planeta.” 
+        afirmacao: "A cidade investiu em reciclagem, reduzindo a quantidade de resíduos descartados no meio ambiente."
       }
     ]
   },
@@ -50,11 +49,11 @@ const perguntas = [
     alternativas: [
       {
         texto: " Melhorar o transporte público.",
-        afirmacao: “Investir na melhoria do transporte público é essencial para garantir viagens mais rápidas, confortáveis e acessíveis, reduzir o trânsito e construir cidades mais sustentáveis para todos.” 
+        afirmacao: "A cidade melhorou o transporte público, incentivando seu uso e reduzindo o número de veículos nas ruas."
       },
       {
         texto: "Construir novas vias.",
-        afirmacao: “Construir novas vias e melhorar as estradas é essencial para reduzir congestionamentos, facilitar a mobilidade urbana e garantir um trânsito mais seguro e eficiente para todos.”
+        afirmacao: "A cidade construiu novas vias, facilitando o deslocamento, mas aumentando os custos de infraestrutura."
       }
     ]
 
@@ -64,12 +63,11 @@ const perguntas = [
     alternativas: [
       {
         texto: " A cidade ficou mais sustentável.",
-        afirmacao: “Após quatro anos de investimentos e conscientização, a cidade tornou-se mais sustentável, com ruas mais limpas, mais reciclagem, transporte público melhor e uma infraestrutura preparada para o futuro.” 
+        afirmacao: "Após quatro anos, a cidade se tornou mais sustentável, com avanços na preservação ambiental e na qualidade de vida."
       },
       {
         texto: "A cidade melhorou economicamente, mas ainda enfrenta problemas ambientais.",
-        afirmacao: "A cidade cresceu economicamente, mas ainda precisa investir em sustentabilidade e preservação ambiental."
-
+        afirmacao: "Após quatro anos, a cidade cresceu economicamente, mas ainda precisa investir em soluções para os problemas ambientais."
       }
     ]
   },
@@ -80,7 +78,7 @@ let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta() {
-  if (atual>= perguntas.length){
+  if (atual >= perguntas.length) {
     mostraResultado();
     return;
   }
@@ -105,7 +103,7 @@ function respostaSelecionada(opcaoSelecionada) {
   mostraPergunta();
 }
 
-function mostraResultado(){
+function mostraResultado() {
   caixaPerguntas.textContent = "Em 2030 ...";
   textoResultado.textContent = historiaFinal;
   caixaAlternativas.textContent = "";
