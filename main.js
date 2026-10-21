@@ -10,11 +10,11 @@ const perguntas = [
     alternativas: [
       {
         texto: "Educação.",
-        afirmacao: "afirmacao"
+        afirmacao: "Acredito que a educação é a chave para transformar vidas. Busco aprender continuamente, desenvolver novas habilidades e compartilhar conhecimento para construir um futuro melhor."
       },
       {
         texto: "Saúde.",
-        afirmacao: "afirmacao"
+        afirmacao: "Meu corpo merece amor, cuidado e respeito. Todos os dias, cultivo hábitos saudáveis, pensamentos positivos e equilíbrio. Eu me permito viver com mais saúde, paz e bem-estar."
 
       }
     ]
@@ -24,11 +24,11 @@ const perguntas = [
     alternativas: [
       {
         texto: "Investir em infraestrutura.",
-        afirmacao: "afirmacao"
+        afirmacao: "nvestindo em infraestrutura, inovação e tecnologia para construir um futuro mais sólido, eficiente e sustentável, com soluções inteligentes e visão de longo prazo."
       },
       {
         texto: "Criar campanhas de conscientização.",
-        afirmacao: "afirmacao"
+        afirmacao: "Criando campanhas de conscientização para promover a educação, incentivar mudanças positivas e construir uma sociedade mais informada, consciente e sustentável."
       }
     ]
   },
@@ -37,11 +37,11 @@ const perguntas = [
     alternativas: [
       {
         texto: "Aumentar a coleta.",
-        afirmacao: "afirmacao"
+        afirmacao: “Uma cidade limpa começa com a consciência de cada cidadão: não jogue lixo na rua, cuide do meio ambiente e faça parte da mudança!”
       },
       {
         texto: "Investir em reciclagem.",
-        afirmacao: "afirmacao"
+        afirmacao: ♻️ “Investir em reciclagem é investir em um futuro sustentável, reduzir a poluição e transformar resíduos em novas oportunidades para o planeta.” 
       }
     ]
   },
@@ -50,11 +50,11 @@ const perguntas = [
     alternativas: [
       {
         texto: " Melhorar o transporte público.",
-        afirmacao: "afirmacao"
+        afirmacao: “Investir na melhoria do transporte público é essencial para garantir viagens mais rápidas, confortáveis e acessíveis, reduzir o trânsito e construir cidades mais sustentáveis para todos.” 
       },
       {
         texto: "Construir novas vias.",
-        afirmacao: "afirmacao"
+        afirmacao: “Construir novas vias e melhorar as estradas é essencial para reduzir congestionamentos, facilitar a mobilidade urbana e garantir um trânsito mais seguro e eficiente para todos.”
       }
     ]
 
@@ -64,11 +64,11 @@ const perguntas = [
     alternativas: [
       {
         texto: " A cidade ficou mais sustentável.",
-        afirmacao: "afirmacao"
+        afirmacao: “Após quatro anos de investimentos e conscientização, a cidade tornou-se mais sustentável, com ruas mais limpas, mais reciclagem, transporte público melhor e uma infraestrutura preparada para o futuro.” 
       },
       {
         texto: "A cidade melhorou economicamente, mas ainda enfrenta problemas ambientais.",
-        afirmacao: "afirmacao"
+        afirmacao: "A cidade cresceu economicamente, mas ainda precisa investir em sustentabilidade e preservação ambiental."
 
       }
     ]
@@ -80,8 +80,13 @@ let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta() {
+  if (atual>= perguntas.length){
+    mostraResultado();
+    return;
+  }
   perguntaAtual = perguntas[atual];
   caixaPerguntas.textContent = perguntaAtual.enunciado
+  caixaAlternativas.textContent = "";
   mostraAlternativas();
 }
 
@@ -94,9 +99,17 @@ function mostraAlternativas() {
   }
 }
 function respostaSelecionada(opcaoSelecionada) {
-  const afirmacoes = opcaoSelecionada.afirmacoes;
-  historiaFinal += afirmacoes + " ";
+  const afirmacao = opcaoSelecionada.afirmacao;
+  historiaFinal += afirmacao + " ";
   atual++;
   mostraPergunta();
 }
+
+function mostraResultado(){
+  caixaPerguntas.textContent = "Em 2030 ...";
+  textoResultado.textContent = historiaFinal;
+  caixaAlternativas.textContent = "";
+}
+
+
 mostraPergunta();
