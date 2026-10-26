@@ -24,7 +24,7 @@ h1{
     color: var(--cor-destaque);
 }
 
-botton{
+button{
    background-color: var(--cor-secundaria);
    color: var(--cor-texto);
    border: none;
